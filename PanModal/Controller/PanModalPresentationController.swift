@@ -882,6 +882,15 @@ private extension PanModalPresentationController {
     }
 }
 
+// MARK: - Accessibility
+
+extension PanModalPresentationController {
+  open override func accessibilityPerformEscape() -> Bool {
+    presentedViewController.dismiss(animated: true, completion: nil)
+    return true
+  }
+}
+
 // MARK: - Helper Extensions
 
 private extension UIScrollView {
